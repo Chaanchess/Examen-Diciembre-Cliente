@@ -32,11 +32,11 @@
 
     let muestraHora = function() {
         hora = fechaActual.getHours();
-        if (hora.length == 1) {
+        if (hora < 10) {
             hora = "0" + hora;
         }
         minutos = fechaActual.getMinutes();
-        if (minutos.length == 1) {
+        if (minutos < 10) {
             minutos = "0" + minutos;
         }
         horaActual.textContent += hora + ":" + minutos;
