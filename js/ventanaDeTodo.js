@@ -51,7 +51,7 @@
         if (minutos < 10) {
             minutos = "0" + minutos;
         }
-        if (hora > 18) {
+        if (hora >= 18) {
             mensaje.textContent += "Son las " + hora + ":" + minutos + ". Ya es hora de que dejes de trabajar. Hay que conciliar la vida laboral con la familiar.";
         }
         if (hora < 8) {
