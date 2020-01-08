@@ -44,7 +44,13 @@
 
     let muestraMensaje = function() {
         hora = fechaActual.getHours();
+        if (hora < 10) {
+            hora = "0" + hora;
+        }
         minutos = fechaActual.getMinutes();
+        if (minutos < 10) {
+            minutos = "0" + minutos;
+        }
         if (hora > 18) {
             mensaje.textContent += "Son las " + hora + ":" + minutos + ". Ya es hora de que dejes de trabajar. Hay que conciliar la vida laboral con la familiar.";
         }

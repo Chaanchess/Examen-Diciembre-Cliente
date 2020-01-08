@@ -62,6 +62,7 @@
                <br/>
                <br/>
                <input type='button' value='Nuevo empleado' id='btnEmpleado'/>
+               <br>
                <span id='error'></span>
         </body>
         
