@@ -4,6 +4,7 @@
 {
 
     let regexNIF = new RegExp("^([\\d]{8})[-\\s]*([A-Z(^IÑOU)])$");
+    let expresionFecha = /^([0][1-9]|[12][0-9]|3[01])(\/|-)([0][1-9]|[1][0-2])\2(\d{4})$/;
     let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
     function Empleado(nombre, fecha, dni) {
@@ -20,9 +21,7 @@
     }
 
     Empleado.prototype.setFecha = function(fecha) {
-        if (fecha == "") {
-            throw new Error("La fecha no puede estar vacía");
-        }
+        this.comprobarFecha(fecha);
         this.fecha = fecha;
     }
 
@@ -40,6 +39,13 @@
         let [,numeroDNI,letraDNI] = regexNIF.exec(dni);
         if(letras[numeroDNI % 23] != letraDNI)
             throw new Error("El DNI no es correcto");
+    }
+
+    Empleado.prototype.comprobarFecha = function(fecha){
+        if(fecha.length == 0)
+            throw new Error("La fecha no puede estar vacía");
+        else if (!expresionFecha.test(fecha))
+            throw new Error("El formato de la fecha es incorrecta");
     }
 
     Empleado.prototype.crearNuevaVentana = function() {

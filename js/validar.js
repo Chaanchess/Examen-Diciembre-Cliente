@@ -2,6 +2,9 @@
 
     let btnEmpleado;
     let error;
+    let nombre;
+    let fecha;
+    let dni;
 
 
 
@@ -20,9 +23,16 @@
 
 
     document.addEventListener("DOMContentLoaded", function init() {
+        nombre = document.getElementById("nombre");
+        fecha = document.getElementById("fecha");
         dni = document.getElementById("dni");
-        error = document.getElementById("error");
         btnEmpleado = document.getElementById("btnEmpleado");
+
+        error = document.getElementById("error");
+
+        nombre.addEventListener("blur",datosEmpleado);
+        fecha.addEventListener("blur",datosEmpleado);
+        dni.addEventListener("blur",datosEmpleado);
         btnEmpleado.addEventListener("click", datosEmpleado);
 
     });
