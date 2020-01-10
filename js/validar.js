@@ -9,12 +9,9 @@
 
 
     let datosEmpleado = function() {
-        let nombre = document.getElementById("nombre").value;
-        let fecha = document.getElementById("fecha").value;
-        let dni = document.getElementById("dni").value;
         try {
             let empleado;
-            empleado = new Empleado(nombre, fecha, dni);
+            empleado = new Empleado(nombre.value, fecha.value, dni.value);
             empleado.crearNuevaVentana();
         } catch (e) {
             error.textContent = e.message;
@@ -30,9 +27,9 @@
 
         error = document.getElementById("error");
 
-        nombre.addEventListener("blur",datosEmpleado);
-        fecha.addEventListener("blur",datosEmpleado);
-        dni.addEventListener("blur",datosEmpleado);
+        nombre.addEventListener("blur", datosEmpleado);
+        fecha.addEventListener("blur", datosEmpleado);
+        dni.addEventListener("blur", datosEmpleado);
         btnEmpleado.addEventListener("click", datosEmpleado);
 
     });
