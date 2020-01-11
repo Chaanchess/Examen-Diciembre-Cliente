@@ -20,6 +20,7 @@
         </head>
         
         <body>
+            <noscript>Necesitas tener JavaScript activo para disfrutar del completo funcionamiento de la página.</noscript>
             <h1>Francisco José Sánchez Romero</h1>
             <main>
             <p id='diaActual'>El día es: </p>
@@ -48,22 +49,23 @@
             <title>Francisco José Sánchez Romero</title>
             <script src="js/Empleado.js"></script>
             <script src="js/validar.js"></script>
+            <script src="js/chequeaForm.js"></script>
         </head>
         
         <body>
+            <noscript>Necesitas tener JavaScript activo para disfrutar del completo funcionamiento de la página.</noscript>
             <h1>Francisco José Sánchez Romero</h1>
-               Nombre del empleado:<input type'text' id='nombre'/>
+               Nombre del empleado:<input type'text' id='nombre'/><span style="color:red" id='errorNombre'></span>
                <br/>
                <br/>
-               Fecha:<input type'text' id='fecha'/>
+               Fecha:<input type'text' id='fecha'/><span style="color:red" id='errorFecha'></span>
                <br/>
                <br/>
-               DNI del empleado:<input type'text' id='dni'/><span id="errorDNI"></span>
+               DNI del empleado:<input type'text' id='dni'/><span style="color:red" id="errorDNI"></span>
                <br/>
                <br/>
                <input type='button' value='Nuevo empleado' id='btnEmpleado'/>
                <br>
-               <span id='error'></span>
         </body>
         
         </html>`;
